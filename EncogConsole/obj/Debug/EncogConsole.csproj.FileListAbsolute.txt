@@ -1,0 +1,68 @@
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csprojResolveAssemblyReference.cache
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.encog_core_cs.encog-core-cs.resources
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormLoader.resources
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormSimple.resources
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.Util.Simple.TrainingDialog.resources
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.GenerateResource.Cache
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe.config
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.pdb
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.exe
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.pdb
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.dll
+C:\Users\losev\source\repos\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.pdb
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe.config
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.pdb
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.dll
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.pdb
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csprojResolveAssemblyReference.cache
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.encog_core_cs.encog-core-cs.resources
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormLoader.resources
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormSimple.resources
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.Util.Simple.TrainingDialog.resources
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.GenerateResource.Cache
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2 (1)\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.pdb
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe.config
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\EncogConsole.pdb
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.dll
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent2.dll
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\System.Numerics.Vectors.dll
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\AdvUtils.dll
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\txt2vec.dll
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent2.pdb
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\Recurent.pdb
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\bin\Debug\System.Numerics.Vectors.xml
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csprojResolveAssemblyReference.cache
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.encog_core_cs.encog-core-cs.resources
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormLoader.resources
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormSimple.resources
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\Encog.Util.Simple.TrainingDialog.resources
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.GenerateResource.Cache
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2\WindowsFormsApp2\EncogConsole\obj\Debug\EncogConsole.pdb
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\EncogConsole.exe.config
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\EncogConsole.pdb
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\Recurent.dll
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\Recurent2.dll
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\System.Numerics.Vectors.dll
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\AdvUtils.dll
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\txt2vec.dll
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\Recurent2.pdb
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\Recurent.pdb
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\bin\Debug\System.Numerics.Vectors.xml
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.csprojResolveAssemblyReference.cache
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.encog_core_cs.encog-core-cs.resources
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormLoader.resources
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormSimple.resources
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\Encog.Util.Simple.TrainingDialog.resources
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.csproj.GenerateResource.Cache
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.exe
+D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.pdb

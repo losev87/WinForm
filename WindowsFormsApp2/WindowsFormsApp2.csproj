@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4135B77-5F36-45DB-95E5-F569311CB944}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp2</RootNamespace>
+    <AssemblyName>WindowsFormsApp2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Encog\ML\Genetic\BasicGeneticAlgorithm.cs" />
+    <Compile Include="Encog\ML\Genetic\Crossover\ICrossover.cs" />
+    <Compile Include="Encog\ML\Genetic\Crossover\Splice.cs" />
+    <Compile Include="Encog\ML\Genetic\Crossover\SpliceNoRepeat.cs" />
+    <Compile Include="Encog\ML\Genetic\Genes\BasicGene.cs" />
+    <Compile Include="Encog\ML\Genetic\Genes\CharGene.cs" />
+    <Compile Include="Encog\ML\Genetic\Genes\DoubleGene.cs" />
+    <Compile Include="Encog\ML\Genetic\Genes\IGene.cs" />
+    <Compile Include="Encog\ML\Genetic\Genes\IntegerGene.cs" />
+    <Compile Include="Encog\ML\Genetic\GeneticAlgorithm.cs" />
+    <Compile Include="Encog\ML\Genetic\GeneticError.cs" />
+    <Compile Include="Encog\ML\Genetic\Genome\BasicGenome.cs" />
+    <Compile Include="Encog\ML\Genetic\Genome\Chromosome.cs" />
+    <Compile Include="Encog\ML\Genetic\Genome\GenomeComparator.cs" />
+    <Compile Include="Encog\ML\Genetic\Genome\ICalculateGenomeScore.cs" />
+    <Compile Include="Encog\ML\Genetic\Genome\IGenome.cs" />
+    <Compile Include="Encog\ML\Genetic\Innovation\BasicInnovation.cs" />
+    <Compile Include="Encog\ML\Genetic\Innovation\BasicInnovationList.cs" />
+    <Compile Include="Encog\ML\Genetic\Innovation\IInnovation.cs" />
+    <Compile Include="Encog\ML\Genetic\Innovation\IInnovationList.cs" />
+    <Compile Include="Encog\ML\Genetic\MateWorker.cs" />
+    <Compile Include="Encog\ML\Genetic\Mutate\IMutate.cs" />
+    <Compile Include="Encog\ML\Genetic\Mutate\MutatePerturb.cs" />
+    <Compile Include="Encog\ML\Genetic\Mutate\MutateShuffle.cs" />
+    <Compile Include="Encog\ML\Genetic\Population\BasicPopulation.cs" />
+    <Compile Include="Encog\ML\Genetic\Population\IPopulation.cs" />
+    <Compile Include="Encog\ML\Genetic\Population\PopulationConst.cs" />
+    <Compile Include="Encog\ML\Genetic\Selection\ParentSelection.cs" />
+    <Compile Include="Encog\ML\Genetic\Selection\TruncateSelection.cs" />
+    <Compile Include="Encog\ML\Genetic\Species\BasicSpecies.cs" />
+    <Compile Include="Encog\ML\Genetic\Species\Species.cs" />
+    <Compile Include="Encog\Neural\Networks\Training\Genetic\GeneticScoreAdapter.cs" />
+    <Compile Include="Encog\Neural\Networks\Training\Genetic\NeuralGeneticAlgorithm.cs" />
+    <Compile Include="Encog\Neural\Networks\Training\Genetic\NeuralGenome.cs" />
+    <Compile Include="Encog\Util\Concurrency\DetermineWorkload.cs" />
+    <Compile Include="Encog\Util\Concurrency\EngineConcurrency.cs" />
+    <Compile Include="Encog\Util\Concurrency\IEngineTask.cs" />
+    <Compile Include="Encog\Util\Concurrency\IMultiThreadable.cs" />
+    <Compile Include="Encog\Util\Concurrency\Job\ConcurrentJob.cs" />
+    <Compile Include="Encog\Util\Concurrency\Job\JobUnitContext.cs" />
+    <Compile Include="Encog\Util\Concurrency\Job\JobUnitWorker.cs" />
+    <Compile Include="Encog\Util\Concurrency\PoolItem.cs" />
+    <Compile Include="Encog\Util\Concurrency\TaskGroup.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.Draw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Enums.cs" />
+    <Compile Include="Service\NNService.cs" />
+    <Compile Include="XYDto`1.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service\NNService.GetSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncogConsole\EncogConsole.csproj">
+      <Project>{f7f2b939-ab44-4513-ac76-f0bf744c545c}</Project>
+      <Name>EncogConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Recurent\Recurent.csproj">
+      <Project>{39b4d1bc-b94e-44b1-a208-cc530f5fcf7f}</Project>
+      <Name>Recurent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
