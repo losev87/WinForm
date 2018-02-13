@@ -21,10 +21,12 @@
 // http://www.heatonresearch.com/copyright
 //
 using System;
+using System.Globalization;
 using System.IO;
 using Encog.ML.Data;
 using Encog.ML.Data.Market;
 using Encog.ML.Data.Market.Loader;
+using Encog.ML.Data.Temporal;
 using Encog.Neural.Networks;
 using Encog.Persist;
 using Encog.Util;
@@ -60,12 +62,11 @@ namespace Encog.Examples.CSVMarketExample
                                               //   MarketDataType.Close, true, true);
 
             var desc = new MarketDataDescription(Config.TICKER,
-                                     MarketDataType.Trade, true, true);
+                                     MarketDataType.Close, TemporalDataDescription.Type.PercentChange, true, true);
             result.AddDescription(desc);
 
-            var end = DateTime.Now; // end today
-            var begin = new DateTime(end.Ticks); // begin 30 days ago
-            begin = begin.AddDays(-150);
+            var begin = DateTime.ParseExact("03.01.2012", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
+            var end = DateTime.ParseExact("29.06.2012", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
 
             result.Load(begin, end);
             result.Generate();
@@ -73,14 +74,14 @@ namespace Encog.Examples.CSVMarketExample
             return result;
         }
 
-        public static void Evaluate(FileInfo dataDir,string filename)
+        public static double Evaluate(FileInfo dataDir,string filename)
         {
             FileInfo file = FileUtil.CombinePath(dataDir, Config.NETWORK_FILE);
 
             if (!file.Exists)
             {
                 Console.WriteLine(@"Can't read file: " + file);
-                return;
+                return 0;
             }
 
             var network = (BasicNetwork) EncogDirectoryPersistence.LoadObject(file);
@@ -117,6 +118,7 @@ namespace Encog.Examples.CSVMarketExample
             Console.WriteLine(@"Direction correct:" + correct + @"/" + count);
             Console.WriteLine(@"Directional Accuracy:"
                               + Format.FormatPercent(percent));
+            return percent;
         }
     }
 }

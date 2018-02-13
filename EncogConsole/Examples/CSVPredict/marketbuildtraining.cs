@@ -21,9 +21,11 @@
 // http://www.heatonresearch.com/copyright
 //
 using System;
+using System.Globalization;
 using System.IO;
 using Encog.ML.Data.Market;
 using Encog.ML.Data.Market.Loader;
+using Encog.ML.Data.Temporal;
 using Encog.Neural.Networks;
 using Encog.Persist;
 using Encog.Util.File;
@@ -42,17 +44,17 @@ namespace Encog.Examples.CSVMarketExample
             var market = new MarketMLDataSet(loader,Config.INPUT_WINDOW, Config.PREDICT_WINDOW);
           //  var desc = new MarketDataDescription(Config.TICKER, MarketDataType.Close, true, true);
 
-            var desc = new MarketDataDescription(Config.TICKER, MarketDataType.Close, true, true);
+            var desc = new MarketDataDescription(Config.TICKER, MarketDataType.Close, TemporalDataDescription.Type.PercentChange, true, true);
             market.AddDescription(desc);
             loader.GetFile(fileName);
 
-            var end = DateTime.Now; // end today
-            var begin = new DateTime(end.Ticks); // begin 30 days ago
+            var begin = DateTime.ParseExact("10.12.2009","dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
+            var end = DateTime.ParseExact("30.12.2011", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
            
             // Gather training data for the last 2 years, stopping 60 days short of today.
             // The 60 days will be used to evaluate prediction.
-            begin = begin.AddDays(-200);
-            end = begin.AddDays(1);
+            //begin = begin.AddDays(-200);
+            //end = begin.AddDays(1);
            
             Console.WriteLine("You are loading date from:" + begin.ToShortDateString() + " To :" + end.ToShortDateString());
 

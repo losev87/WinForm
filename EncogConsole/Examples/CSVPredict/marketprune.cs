@@ -24,6 +24,7 @@ using System;
 using System.IO;
 using Encog.Engine.Network.Activation;
 using Encog.ML.Data;
+using Encog.Neural.Networks;
 using Encog.Neural.Pattern;
 using Encog.Neural.Prune;
 using Encog.Persist;
@@ -36,14 +37,14 @@ namespace Encog.Examples.CSVMarketExample
 
     public class MarketPrune
     {
-        public static void Incremental(FileInfo dataDir)
+        public static BasicNetwork Incremental(FileInfo dataDir)
         {
             FileInfo file = FileUtil.CombinePath(dataDir, Config.TRAINING_FILE);
 
             if (!file.Exists)
             {
                 Console.WriteLine(@"Can't read file: " + file);
-                return;
+                return null;
             }
 
             IMLDataSet training = EncogUtility.LoadEGB2Memory(file);
@@ -64,7 +65,11 @@ namespace Encog.Examples.CSVMarketExample
 
             prune.Process();
 
+            var network = prune.BestNetwork;
+
             EncogDirectoryPersistence.SaveObject(file, prune.BestNetwork);
+
+            return network;
         }
     }
 }

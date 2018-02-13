@@ -22,7 +22,9 @@
 //
 using System;
 using System.IO;
+using System.Text;
 using ConsoleExamples.Examples;
+using Encog.Neural.Networks;
 
 namespace Encog.Examples.CSVMarketExample
 {
@@ -48,12 +50,32 @@ namespace Encog.Examples.CSVMarketExample
         {
             var forexFile = "D:\\1\\1.csv";
 
+            var resultFile = "D:\\1\\res.txt";
+
             var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
 
-            MarketBuildTraining.Generate(forexFile);
-            MarketTrain.Train(dataDir);
-            MarketPrune.Incremental(dataDir);
-            MarketEvaluate.Evaluate(dataDir, forexFile);
+            for (int i = 0; i < 10; i++)
+            {
+                Config.OFFSET = i;
+
+                for (int j = 0; j < 10; j++)
+                {
+                    Config.TRAINING_FILE = $"marketData({i}-{j}){DateTime.Now.Ticks}.egb";
+                    Config.NETWORK_FILE = $"marketNetwork({i}-{j}){DateTime.Now.Ticks}.eg";
+
+                    //public static readonly String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
+                    //public static readonly String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
+
+                    MarketBuildTraining.Generate(forexFile);
+                    var err = MarketTrain.Train(dataDir);
+                    var best = MarketPrune.Incremental(dataDir);
+                    var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
+
+                    var result = $"Offset = {i}, trainErr = {err}, best: {NetworkToString(best)}, result = {gErr}";
+
+                    File.AppendAllLines(resultFile,new []{result});
+                }
+            }
 
             //if (app.Args.Length < 3)
             //{
@@ -78,6 +100,33 @@ namespace Encog.Examples.CSVMarketExample
             //        }
             //    }
             //}
+        }
+        public static String NetworkToString(BasicNetwork network)
+        {
+            if (network != null)
+            {
+                var result = new StringBuilder();
+                int num = 1;
+
+                // display only hidden layers
+                for (int i = 1; i < network.LayerCount - 1; i++)
+                {
+                    if (result.Length > 0)
+                    {
+                        result.Append(",");
+                    }
+                    result.Append("H");
+                    result.Append(num++);
+                    result.Append("=");
+                    result.Append(network.GetLayerNeuronCount(i));
+                }
+
+                return result.ToString();
+            }
+            else
+            {
+                return "N/A";
+            }
         }
 
         #endregion

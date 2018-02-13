@@ -33,7 +33,7 @@ namespace Encog.Examples.CSVMarketExample
 
     public class MarketTrain
     {
-        public static void Train(FileInfo dataDir)
+        public static double Train(FileInfo dataDir)
         {
             FileInfo networkFile = FileUtil.CombinePath(dataDir, Config.NETWORK_FILE);
             FileInfo trainingFile = FileUtil.CombinePath(dataDir, Config.TRAINING_FILE);
@@ -42,7 +42,7 @@ namespace Encog.Examples.CSVMarketExample
             if (!networkFile.Exists)
             {
                 Console.WriteLine(@"Can't read file: " + networkFile);
-                return;
+                return 0;
             }
 
             var network = (BasicNetwork) EncogDirectoryPersistence.LoadObject(networkFile);
@@ -51,7 +51,7 @@ namespace Encog.Examples.CSVMarketExample
             if (!trainingFile.Exists)
             {
                 Console.WriteLine(@"Can't read file: " + trainingFile);
-                return;
+                return 0;
             }
 
             IMLDataSet trainingSet = EncogUtility.LoadEGB2Memory(trainingFile);
@@ -59,12 +59,14 @@ namespace Encog.Examples.CSVMarketExample
             // train the neural network
             EncogUtility.TrainConsole(network, trainingSet, Config.TRAINING_MINUTES);
 
-            Console.WriteLine(@"Final Error: " + network.CalculateError(trainingSet));
+            var error = network.CalculateError(trainingSet);
+            Console.WriteLine(@"Final Error: " + error);
             Console.WriteLine(@"Training complete, saving network.");
             EncogDirectoryPersistence.SaveObject(networkFile, network);
             Console.WriteLine(@"Network saved.");
 
             EncogFramework.Instance.Shutdown();
+            return error;
         }
     }
 }

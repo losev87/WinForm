@@ -23,6 +23,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Encog.Examples.CSVMarketExample;
 using Encog.ML.Data.Basic;
 using Encog.Neural.Data.Basic;
 using Encog.Util.Time;
@@ -593,10 +594,10 @@ namespace Encog.ML.Data.Temporal
             int range = start
                         + (setSize - _predictWindowSize - _inputWindowSize);
 
-            for (int i = start; i < range; i++)
+            for (int i = start; i < range - Config.OFFSET; i++)
             {
                 BasicNeuralData input = GenerateInputNeuralData(i);
-                BasicNeuralData ideal = GenerateOutputNeuralData(i
+                BasicNeuralData ideal = GenerateOutputNeuralData(i + Config.OFFSET
                                                                  + _inputWindowSize);
                 var pair = new BasicNeuralDataPair(input, ideal);
                 base.Add(pair);

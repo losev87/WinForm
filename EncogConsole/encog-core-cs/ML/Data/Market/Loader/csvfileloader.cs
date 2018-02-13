@@ -53,9 +53,13 @@ namespace Encog.ML.Data.Market.Loader
 
 
                 //  Time,Open,High,Low,Close,Volume
-                while (csv.Next() && ParsedDate >= from && ParsedDate <= to  )
+                while (csv.Next() /*&& ParsedDate >= from && ParsedDate <= to*/  )
                 {
                     DateTime date = csv.GetDate("Date");
+
+                    if (date > to) break;
+                    if (date < from) continue;
+
                     double close = csv.GetDouble("Close");
                     //double Bid= csv.GetDouble("Bid");
                     //double Ask = csv.GetDouble("Ask");
@@ -69,9 +73,9 @@ namespace Encog.ML.Data.Market.Loader
                     //data.SetData(MarketDataType.Volume, _tradeSize);
                     result.Add(data);
 
-                    Console.WriteLine("Current DateTime:"+ParsedDate.ToShortDateString()+ " Time:"+ParsedDate.ToShortTimeString() +"  Start date was "+from.ToShortDateString());
+                    Console.WriteLine("Current DateTime:"+ date.ToShortDateString()+ " Time:"+ date.ToShortTimeString() +"  Start date was "+from.ToShortDateString());
                     Console.WriteLine("Stopping at date:" + to.ToShortDateString() );
-                    ParsedDate = date;
+                    
                     //double open = csv.GetDouble("Open");
                     //double close = csv.GetDouble("High");
                     //double high = csv.GetDouble("Low");
