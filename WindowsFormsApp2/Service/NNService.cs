@@ -15,13 +15,6 @@ using Encog.Neural.Networks.Training.Genetic;
 using Encog.Neural.Networks.Training.Lma;
 using Encog.Neural.Networks.Training.Propagation.Back;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
-using SharpML.Recurrent.Activations;
-using SharpML.Recurrent.DataStructs;
-using SharpML.Recurrent.Loss;
-using SharpML.Recurrent.Models;
-using SharpML.Recurrent.Networks;
-using SharpML.Recurrent.Trainer;
-using SharpML.Recurrent.Util;
 
 namespace WindowsFormsApp2.Service
 {
@@ -52,7 +45,6 @@ namespace WindowsFormsApp2.Service
         private int _matePercent = 40;
         private int _mutationPercent = 20;
 
-        private INetwork _rnetwork;
         private BasicNetwork _network;
 
         private int[] _layers;
@@ -131,7 +123,7 @@ namespace WindowsFormsApp2.Service
             var result = new List<IndValueDto>();
 
             var sourceArray = GetSource();
-            if(_network==null && _rnetwork == null) return result.ToArray();
+            if(_network==null) return result.ToArray();
             for (int i = 0; i < periodLength; i++)
             {
                 var source = new double[_windowSize];
@@ -185,15 +177,6 @@ namespace WindowsFormsApp2.Service
                 _network.Compute(normSource, output);
 
                 return output;
-            }
-
-            if (_rnetwork != null)
-            {
-                Matrix output = new Matrix(_layers.Last());
-                Matrix input = new Matrix(normSource);
-                Graph g = new Graph(true);
-                output = _rnetwork.Activate(input, g);
-                return output.W;
             }
 
             //MessageBox.Show("NN not created");
@@ -286,20 +269,19 @@ namespace WindowsFormsApp2.Service
 
                 _network.Structure.FinalizeStructure();
                 _network.Reset();
-                _rnetwork = null;
             }
 
-            if (_wantedNnType == NetworkType.RNN)
-            {
-                _rnetwork = NetworkBuilder.MakeLstm(_windowSize,
-                    _layers[0],
-                    _layers[1],
-                    _layers[2],
-                    new TanhUnit(),
-                    0.08, new Random());
-                _rnetwork.ResetState();
-                _network = null;
-            }
+            //if (_wantedNnType == NetworkType.RNN)
+            //{
+            //    _rnetwork = NetworkBuilder.MakeLstm(_windowSize,
+            //        _layers[0],
+            //        _layers[1],
+            //        _layers[2],
+            //        new TanhUnit(),
+            //        0.08, new Random());
+            //    _rnetwork.ResetState();
+            //    _network = null;
+            //}
         }
 
         public IndValueDto[] GetKnownSourceData()
@@ -346,7 +328,6 @@ namespace WindowsFormsApp2.Service
             var i0 = TrainStartIndex();
             var sourceArray = GetSource().ToArray();
             var window = new Queue<double>(sourceArray.Skip(i0).Take(_windowSize).Select(d => d.Val[(byte)_wantedInput]));
-            var trainingDataSet = new List<DataSequence>();
 
             for (var i = 0; i < _learnLength; i++)
             {
@@ -359,8 +340,6 @@ namespace WindowsFormsApp2.Service
 
                 var ouputArray = sourceArray.Skip(i + _windowSize).Take(_layers.Last()).Select(d => d.Val[(byte)_wantedOutput]).ToArray();
                 outputs[i] = NormalizeOutput(ouputArray);
-
-                trainingDataSet.Add(new DataSequence(new List<DataStep>() { new DataStep(inputs[i], outputs[i]) }));
             }
 
             if (_network != null)
@@ -390,21 +369,6 @@ namespace WindowsFormsApp2.Service
                         trainCallback(teacher.Error, i);
                     }
                 }
-            }
-
-            if (_rnetwork != null)
-            {
-                _epoch = int.MaxValue;
-                Trainer.train<NeuralNetwork>(ref _epoch, 0.001, _rnetwork, new DataSet()
-                {
-                    Training = trainingDataSet,
-                    InputDimension = _windowSize,
-                    LossReporting = new LossSumOfSquares(),
-                    LossTraining = new LossSumOfSquares(),
-                    OutputDimension = _layers[2],
-                    Testing = trainingDataSet,
-                    Validation = trainingDataSet
-                }, reportEach, new Random(), trainCallback);
             }
         }
 

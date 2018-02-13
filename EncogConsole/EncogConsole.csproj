@@ -1068,15 +1068,5 @@
       <DependentUpon>TrainingDialog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Recurent2\Recurent2.csproj">
-      <Project>{cd982eb5-736a-4e62-ad91-c11401427200}</Project>
-      <Name>Recurent2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Recurent\Recurent.csproj">
-      <Project>{39b4d1bc-b94e-44b1-a208-cc530f5fcf7f}</Project>
-      <Name>Recurent</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

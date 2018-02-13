@@ -1,6 +1,5 @@
 ﻿using System;
 using Encog.Examples.CSVMarketExample;
-using SharpML.Reccurent.Examples;
 
 namespace EncogConsole
 {
@@ -10,7 +9,6 @@ namespace EncogConsole
         {
             //var example = new MultiThreadBenchmark();
             //example.Execute(null);
-            //ExampleXor.Run();
             new MarketPredict().Execute(null);
             Console.ReadLine();
         }

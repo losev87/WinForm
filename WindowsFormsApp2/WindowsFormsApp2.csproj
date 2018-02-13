@@ -133,10 +133,6 @@
       <Project>{f7f2b939-ab44-4513-ac76-f0bf744c545c}</Project>
       <Name>EncogConsole</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Recurent\Recurent.csproj">
-      <Project>{39b4d1bc-b94e-44b1-a208-cc530f5fcf7f}</Project>
-      <Name>Recurent</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
