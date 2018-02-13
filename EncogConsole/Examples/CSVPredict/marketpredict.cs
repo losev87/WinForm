@@ -46,33 +46,38 @@ namespace Encog.Examples.CSVMarketExample
 
         public void Execute(IExampleInterface app)
         {
-            if (app.Args.Length < 3)
-            {
-                Console.WriteLine(@"MarketPredict [data dir] [generate/train/prune/evaluate] PathToFile");
-                Console.WriteLine(@"e.g csvMarketPredict [data dir] [generate/train/prune/evaluate] c:\\EURUSD.csv");
-            }
-            else
-            {
-                var dataDir = new FileInfo(app.Args[0]);
-                if (String.Compare(app.Args[1], "generate", true) == 0)
-                {
-                    MarketBuildTraining.Generate(app.Args[2]);
-                }
-                else if (String.Compare(app.Args[1], "train", true) == 0)
-                {
-                    MarketTrain.Train(dataDir);
-                }
-                else if (String.Compare(app.Args[1], "evaluate", true) == 0)
-                {
-                    MarketEvaluate.Evaluate(dataDir,app.Args[2]);
-                }
-                else if (String.Compare(app.Args[1], "prune", true) == 0)
-                {
-                    {
-                        MarketPrune.Incremental(dataDir);
-                    }
-                }
-            }
+            var forexFile = "D:\\1\\1.csv";
+
+            var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
+
+            MarketBuildTraining.Generate(forexFile);
+            MarketTrain.Train(dataDir);
+            MarketPrune.Incremental(dataDir);
+            MarketEvaluate.Evaluate(dataDir, forexFile);
+
+            //if (app.Args.Length < 3)
+            //{
+            //    Console.WriteLine(@"MarketPredict [data dir] [generate/train/prune/evaluate] PathToFile");
+            //    Console.WriteLine(@"e.g csvMarketPredict [data dir] [generate/train/prune/evaluate] c:\\EURUSD.csv");
+            //}
+            //else
+            //{
+            //    var dataDir1 = new FileInfo(app.Args[0]);
+            //    if (String.Compare(app.Args[1], "generate", true) == 0)
+            //    {
+            //    }
+            //    else if (String.Compare(app.Args[1], "train", true) == 0)
+            //    {
+            //    }
+            //    else if (String.Compare(app.Args[1], "evaluate", true) == 0)
+            //    {
+            //    }
+            //    else if (String.Compare(app.Args[1], "prune", true) == 0)
+            //    {
+            //        {
+            //        }
+            //    }
+            //}
         }
 
         #endregion

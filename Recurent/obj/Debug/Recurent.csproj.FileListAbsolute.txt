@@ -22,3 +22,9 @@ D:\losev\WindowsFormsApp2 (1)\Recurent\obj\Debug\Recurent.csprojResolveAssemblyR
 D:\losev\WindowsFormsApp2 (1)\Recurent\obj\Debug\Recurent.csproj.CoreCompileInputs.cache
 D:\losev\WindowsFormsApp2 (1)\Recurent\obj\Debug\Recurent.dll
 D:\losev\WindowsFormsApp2 (1)\Recurent\obj\Debug\Recurent.pdb
+C:\development\GIT\WinForm\Recurent\bin\Debug\Recurent.dll
+C:\development\GIT\WinForm\Recurent\bin\Debug\Recurent.pdb
+C:\development\GIT\WinForm\Recurent\obj\Debug\Recurent.csprojResolveAssemblyReference.cache
+C:\development\GIT\WinForm\Recurent\obj\Debug\Recurent.csproj.CoreCompileInputs.cache
+C:\development\GIT\WinForm\Recurent\obj\Debug\Recurent.dll
+C:\development\GIT\WinForm\Recurent\obj\Debug\Recurent.pdb

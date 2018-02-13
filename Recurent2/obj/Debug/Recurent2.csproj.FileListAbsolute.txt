@@ -22,3 +22,13 @@ D:\losev\WindowsFormsApp2 (1)\Recurent2\obj\Debug\Recurent2.csprojResolveAssembl
 D:\losev\WindowsFormsApp2 (1)\Recurent2\obj\Debug\Recurent2.csproj.CoreCompileInputs.cache
 D:\losev\WindowsFormsApp2 (1)\Recurent2\obj\Debug\Recurent2.dll
 D:\losev\WindowsFormsApp2 (1)\Recurent2\obj\Debug\Recurent2.pdb
+C:\development\GIT\WinForm\Recurent2\bin\Debug\Recurent2.dll
+C:\development\GIT\WinForm\Recurent2\bin\Debug\Recurent2.pdb
+C:\development\GIT\WinForm\Recurent2\bin\Debug\AdvUtils.dll
+C:\development\GIT\WinForm\Recurent2\bin\Debug\System.Numerics.Vectors.dll
+C:\development\GIT\WinForm\Recurent2\bin\Debug\txt2vec.dll
+C:\development\GIT\WinForm\Recurent2\bin\Debug\System.Numerics.Vectors.xml
+C:\development\GIT\WinForm\Recurent2\obj\Debug\Recurent2.csprojResolveAssemblyReference.cache
+C:\development\GIT\WinForm\Recurent2\obj\Debug\Recurent2.csproj.CoreCompileInputs.cache
+C:\development\GIT\WinForm\Recurent2\obj\Debug\Recurent2.dll
+C:\development\GIT\WinForm\Recurent2\obj\Debug\Recurent2.pdb

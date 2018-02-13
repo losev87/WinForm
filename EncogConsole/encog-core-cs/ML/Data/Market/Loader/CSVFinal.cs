@@ -64,11 +64,11 @@ namespace Encog.ML.Data.Market.Loader
                 //We got a file, lets load it.
 
                 ICollection<LoadedMarketData> result = new List<LoadedMarketData>();
-                ReadCSV csv = new ReadCSV(File, true, CSVFormat.English);
+                ReadCSV csv = new ReadCSV(File, true, CSVFormat.DecimalComma);
                 //In case we want to use a different date format...and have used the SetDateFormat method, our DateFormat must then not be null..
                 //We will use the ?? operator to check for nullables.
-                csv.DateFormat = DateFormat ?? "yyyy-MM-dd HH:mm:ss";
-                csv.TimeFormat = "HH:mm:ss";
+                csv.DateFormat = DateFormat ?? "dd.MM.yyyy HH:mm";
+                csv.TimeFormat = "HH:mm";
 
                 DateTime ParsedDate = from;
                 bool writeonce = true;
@@ -90,23 +90,23 @@ namespace Encog.ML.Data.Market.Loader
                     if (ParsedDate >= from && ParsedDate <= to)
                     {
                         DateTime datex = csv.GetDate(0);
-                        double open = csv.GetDouble(1);
-                        double close = csv.GetDouble(2);
-                        double high = csv.GetDouble(3);
-                        double low = csv.GetDouble(4);
-                        double volume = csv.GetDouble(5);
-                        double range = Math.Abs(open - close);
-                        double HighLowRange = Math.Abs(high - low);
-                        double DirectionalRange = close - open;
+                        //double open = csv.GetDouble(1);
+                        double close = csv.GetDouble(1);
+                        //double high = csv.GetDouble(3);
+                        //double low = csv.GetDouble(4);
+                        //double volume = csv.GetDouble(5);
+                        //double range = Math.Abs(open - close);
+                        //double HighLowRange = Math.Abs(high - low);
+                        //double DirectionalRange = close - open;
                         LoadedMarketData data = new LoadedMarketData(datex, symbol);
-                        data.SetData(MarketDataType.Open, open);
-                        data.SetData(MarketDataType.High, high);
-                        data.SetData(MarketDataType.Low, low);
+                        //data.SetData(MarketDataType.Open, open);
+                        //data.SetData(MarketDataType.High, high);
+                        //data.SetData(MarketDataType.Low, low);
                         data.SetData(MarketDataType.Close, close);
-                        data.SetData(MarketDataType.Volume, volume);
-                        data.SetData(MarketDataType.RangeHighLow, Math.Round(HighLowRange, 6));
-                        data.SetData(MarketDataType.RangeOpenClose, Math.Round(range, 6));
-                        data.SetData(MarketDataType.RangeOpenCloseNonAbsolute, Math.Round(DirectionalRange, 6));
+                        //data.SetData(MarketDataType.Volume, volume);
+                        //data.SetData(MarketDataType.RangeHighLow, Math.Round(HighLowRange, 6));
+                        //data.SetData(MarketDataType.RangeOpenClose, Math.Round(range, 6));
+                        //data.SetData(MarketDataType.RangeOpenCloseNonAbsolute, Math.Round(DirectionalRange, 6));
                         result.Add(data);
 
 

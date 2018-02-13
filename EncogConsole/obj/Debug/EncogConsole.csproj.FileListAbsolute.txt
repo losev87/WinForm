@@ -66,3 +66,23 @@ D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.csproj.Generat
 D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
 D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.exe
 D:\losev\WindowsFormsApp2 (1)\EncogConsole\obj\Debug\EncogConsole.pdb
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\EncogConsole.exe.config
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\EncogConsole.exe
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\EncogConsole.pdb
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\Recurent.dll
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\Recurent2.dll
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\System.Numerics.Vectors.dll
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\AdvUtils.dll
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\txt2vec.dll
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\Recurent2.pdb
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\Recurent.pdb
+C:\development\GIT\WinForm\EncogConsole\bin\Debug\System.Numerics.Vectors.xml
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.csprojResolveAssemblyReference.cache
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.encog_core_cs.encog-core-cs.resources
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormLoader.resources
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\Encog.ML.Data.Market.Loader.CSVFormSimple.resources
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\Encog.Util.Simple.TrainingDialog.resources
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.csproj.GenerateResource.Cache
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.csproj.CoreCompileInputs.cache
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.exe
+C:\development\GIT\WinForm\EncogConsole\obj\Debug\EncogConsole.pdb
