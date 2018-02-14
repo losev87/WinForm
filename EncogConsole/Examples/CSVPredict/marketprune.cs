@@ -60,8 +60,8 @@ namespace Encog.Examples.CSVMarketExample
             var prune = new PruneIncremental(training, pattern, 100, 1, 10,
                                              new ConsoleStatusReportable());
 
-            prune.AddHiddenLayer(5, 50);
-            prune.AddHiddenLayer(0, 50);
+            prune.AddHiddenLayer(3, 40);
+            prune.AddHiddenLayer(0, 15);
 
             prune.Process();
 

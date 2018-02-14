@@ -28,7 +28,6 @@ using Encog.Neural.Networks;
 
 namespace Encog.Examples.CSVMarketExample
 {
-
     public class MarketPredict : IExample
     {
         public static ExampleInfo Info
@@ -48,32 +47,52 @@ namespace Encog.Examples.CSVMarketExample
 
         public void Execute(IExampleInterface app)
         {
-            var forexFile = "D:\\1\\1.csv";
-
-            var resultFile = "D:\\1\\res.txt";
-
-            var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
-
-            for (int i = 0; i < 10; i++)
+            for (int a = 1; a < 10; a++)
             {
-                Config.OFFSET = i;
-
-                for (int j = 0; j < 10; j++)
+                string name = "";
+                switch (a)
                 {
-                    Config.TRAINING_FILE = $"marketData({i}-{j}){DateTime.Now.Ticks}.egb";
-                    Config.NETWORK_FILE = $"marketNetwork({i}-{j}){DateTime.Now.Ticks}.eg";
+                    //case 1: name = "BRN"; break;
+                    case 2: name = "EURUSD"; break;
+                    case 3: name = "FDAX"; break;
+                    case 4: name = "Gazprom"; break;
+                    case 5: name = "Sberbank"; break;
+                    case 6: name = "USDCHF"; break;
+                    case 7: name = "USDJPY"; break;
+                    case 8: name = "XAUUSD"; break;
+                    //case 9: name = "YNDX"; break;
+                }
+                if(string.IsNullOrEmpty(name)) continue;
 
-                    //public static readonly String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
-                    //public static readonly String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
+                var forexFile = $"D:\\1\\{name}1440.csv";
 
-                    MarketBuildTraining.Generate(forexFile);
-                    var err = MarketTrain.Train(dataDir);
-                    var best = MarketPrune.Incremental(dataDir);
-                    var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
+                var resultFile = $"D:\\1\\res_{name}.txt";
 
-                    var result = $"Offset = {i}, trainErr = {err}, best: {NetworkToString(best)}, result = {gErr}";
+                var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
 
-                    File.AppendAllLines(resultFile,new []{result});
+                for (int i = 0; i < 10; i++)
+                {
+                    Config.OFFSET = i;
+
+                    for (int j = 0; j < 10; j++)
+                    {
+                        var timeStart = DateTime.Now;
+                        Config.TRAINING_FILE = $"marketData({name}-{i}-{j}){DateTime.Now.Ticks}.egb";
+                        Config.NETWORK_FILE = $"marketNetwork({name}-{i}-{j}){DateTime.Now.Ticks}.eg";
+
+                        //public static readonly String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
+                        //public static readonly String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
+
+                        MarketBuildTraining.Generate(forexFile);
+                        var err = MarketTrain.Train(dataDir);
+                        var best = MarketPrune.Incremental(dataDir);
+                        var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
+
+                        var result =
+                            $"Offset = {i}; trainErr = {err}; best: {NetworkToString(best)}; result = {gErr:0.00}; timeTaken: {DateTime.Now - timeStart:g}";
+
+                        File.AppendAllLines(resultFile, new[] {result});
+                    }
                 }
             }
 

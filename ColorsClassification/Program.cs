@@ -1,8 +1,8 @@
 //
-// Encog(tm) Core v3.2 - .Net Version
+// Encog(tm) Examples v3.0 - .Net Version
 // http://www.heatonresearch.com/encog/
 //
-// Copyright 2008-2014 Heaton Research, Inc.
+// Copyright 2008-2011 Heaton Research, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,20 +21,23 @@
 // http://www.heatonresearch.com/copyright
 //
 using System;
-using Encog.ML.Data.Market;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
-namespace Encog.Examples.CSVMarketExample
+namespace SOMColors
 {
-    public class Config
+    static class Program
     {
-        public static String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
-        public static String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
-        public static readonly int TRAINING_MINUTES = 1;
-        public static readonly int HIDDEN1_COUNT = 15;
-        public static readonly int HIDDEN2_COUNT = 0;
-        public static readonly int INPUT_WINDOW = 25;
-        public static readonly int PREDICT_WINDOW = 1;
-        public static int OFFSET = 0;
-        public static readonly TickerSymbol TICKER = new TickerSymbol("EURUSD");
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new SOMColors());
+        }
     }
 }

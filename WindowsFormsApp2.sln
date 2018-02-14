@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp2", "Windows
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncogConsole", "EncogConsole\EncogConsole.csproj", "{F7F2B939-AB44-4513-AC76-F0BF744C545C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorsClassification", "ColorsClassification\ColorsClassification.csproj", "{8F6F52A3-B3C6-49FF-8D8E-0B6004CFDCBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F7F2B939-AB44-4513-AC76-F0BF744C545C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7F2B939-AB44-4513-AC76-F0BF744C545C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7F2B939-AB44-4513-AC76-F0BF744C545C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6F52A3-B3C6-49FF-8D8E-0B6004CFDCBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6F52A3-B3C6-49FF-8D8E-0B6004CFDCBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6F52A3-B3C6-49FF-8D8E-0B6004CFDCBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6F52A3-B3C6-49FF-8D8E-0B6004CFDCBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

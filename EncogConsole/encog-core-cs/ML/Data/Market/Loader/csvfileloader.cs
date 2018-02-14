@@ -47,7 +47,7 @@ namespace Encog.ML.Data.Market.Loader
                 //We got a file, lets load it.
                 ICollection<LoadedMarketData> result = new List<LoadedMarketData>();
                 ReadCSV csv = new ReadCSV(File, true, CSVFormat.DecimalComma);
-                csv.DateFormat = "dd.MM.yyyy HH:mm";
+                csv.DateFormat = "yyyy.MM.dd HH:mm";
 
                 DateTime ParsedDate = from;
 
