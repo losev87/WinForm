@@ -65,8 +65,8 @@ namespace Encog.Examples.CSVMarketExample
                                      MarketDataType.Close, TemporalDataDescription.Type.PercentChange, true, true);
             result.AddDescription(desc);
 
-            var begin = DateTime.ParseExact("03.01.2012", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
-            var end = DateTime.ParseExact("29.06.2012", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
+            var begin = DateTime.ParseExact("29.05.2005", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
+            var end = DateTime.ParseExact("22.07.2005", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
 
             result.Load(begin, end);
             result.Generate();

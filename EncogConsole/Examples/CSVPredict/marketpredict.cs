@@ -47,34 +47,35 @@ namespace Encog.Examples.CSVMarketExample
 
         public void Execute(IExampleInterface app)
         {
-            for (int a = 1; a < 10; a++)
+            for (int a = 0; a < 10; a++)
             {
                 string name = "";
                 switch (a)
                 {
-                    //case 1: name = "BRN"; break;
-                    case 2: name = "EURUSD"; break;
-                    case 3: name = "FDAX"; break;
-                    case 4: name = "Gazprom"; break;
-                    case 5: name = "Sberbank"; break;
-                    case 6: name = "USDCHF"; break;
-                    case 7: name = "USDJPY"; break;
-                    case 8: name = "XAUUSD"; break;
-                    //case 9: name = "YNDX"; break;
+                    case 4: name = "BMW1440"; break;
+                    case 1: name = "DAI1440"; break;
+                    case 2: name = "EURUSD5"; break;
+                    case 3: name = "Gazprom1440"; break;
+                    case 0: name = "Lukoil1440"; break;
+                    case 5: name = "Sberbank1440"; break;
+                    case 6: name = "USDCHF5"; break;
+                    case 7: name = "USDJPY5"; break;
+                    //case 8: name = "USDJPY5_1"; break;
+                    case 9: name = "XAUUSD5"; break;
                 }
                 if(string.IsNullOrEmpty(name)) continue;
 
-                var forexFile = $"D:\\1\\{name}1440.csv";
+                var forexFile = $"D:\\1\\{name}.csv";
 
-                var resultFile = $"D:\\1\\res_{name}.txt";
+                var resultFile = $"D:\\1\\_res_{name}.txt";
 
                 var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     Config.OFFSET = i;
 
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 5; j++)
                     {
                         var timeStart = DateTime.Now;
                         Config.TRAINING_FILE = $"marketData({name}-{i}-{j}){DateTime.Now.Ticks}.egb";
@@ -89,7 +90,7 @@ namespace Encog.Examples.CSVMarketExample
                         var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
 
                         var result =
-                            $"Offset = {i}; trainErr = {err}; best: {NetworkToString(best)}; result = {gErr:0.00}; timeTaken: {DateTime.Now - timeStart:g}";
+                            $"Offset = {i};\t trainErr = {err};\t best: {NetworkToString(best)};\t result = {gErr:0.00};\t timeTaken: {DateTime.Now - timeStart:g};\t startTime: {timeStart:g}";
 
                         File.AppendAllLines(resultFile, new[] {result});
                     }

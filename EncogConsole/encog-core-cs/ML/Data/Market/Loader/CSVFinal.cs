@@ -91,11 +91,11 @@ namespace Encog.ML.Data.Market.Loader
                     {
                         DateTime datex = csv.GetDate(0);
                     //double open = csv.GetDouble(1);
-                        double open = csv.GetDouble(1);
-                        double high = csv.GetDouble(2);
-                        double low = csv.GetDouble(3);
-                        double close = csv.GetDouble(4);
-                        double volume = csv.GetDouble(5);
+                        //double open = csv.GetDouble(1);
+                        //double high = csv.GetDouble(2);
+                        //double low = csv.GetDouble(3);
+                        double close = csv.GetDouble(1);
+                        //double volume = csv.GetDouble(5);
                         //double high = csv.GetDouble(3);
                         //double low = csv.GetDouble(4);
                         //double volume = csv.GetDouble(5);
@@ -107,10 +107,10 @@ namespace Encog.ML.Data.Market.Loader
                         //data.SetData(MarketDataType.High, high);
                         //data.SetData(MarketDataType.Low, low);
                         data.SetData(MarketDataType.Close, close);
-                        data.SetData(MarketDataType.Open, open);
-                        data.SetData(MarketDataType.High, high);
-                        data.SetData(MarketDataType.Low, low);
-                        data.SetData(MarketDataType.Volume, volume);
+                        //data.SetData(MarketDataType.Open, open);
+                        //data.SetData(MarketDataType.High, high);
+                        //data.SetData(MarketDataType.Low, low);
+                        //data.SetData(MarketDataType.Volume, volume);
                     //data.SetData(MarketDataType.Volume, volume);
                     //data.SetData(MarketDataType.RangeHighLow, Math.Round(HighLowRange, 6));
                     //data.SetData(MarketDataType.RangeOpenClose, Math.Round(range, 6));
