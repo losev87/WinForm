@@ -68,6 +68,9 @@ namespace Encog.Examples.CSVMarketExample
             var begin = DateTime.ParseExact("29.05.2005", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
             var end = DateTime.ParseExact("22.07.2005", "dd.MM.yyyy", CultureInfo.CurrentCulture); // begin 30 days ago
 
+            begin = begin.AddDays(Config.DAYS_OFFSET).AddDays(Config.TEST_OFFSET);
+            end = end.AddDays(Config.DAYS_OFFSET).AddDays(Config.TEST_OFFSET).AddDays(Config.TEST_STRATCH);
+
             result.Load(begin, end);
             result.Generate();
 

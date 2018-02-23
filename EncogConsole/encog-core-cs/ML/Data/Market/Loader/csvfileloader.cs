@@ -87,7 +87,7 @@ namespace Encog.ML.Data.Market.Loader
                     //data.SetData(MarketDataType.Low, low);
                     //data.SetData(MarketDataType.Close, close);
                     //data.SetData(MarketDataType.Volume, volume);
-                    result.Add(data);
+                    //result.Add(data);
                 }
 
                 csv.Close();

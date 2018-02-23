@@ -36,5 +36,8 @@ namespace Encog.Examples.CSVMarketExample
         public static readonly int PREDICT_WINDOW = 1;
         public static int OFFSET = 0;
         public static readonly TickerSymbol TICKER = new TickerSymbol("EURUSD");
+        public static int DAYS_OFFSET = 200;
+        public static int TEST_STRATCH = 0;
+        public static int TEST_OFFSET = 0;
     }
 }

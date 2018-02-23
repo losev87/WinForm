@@ -52,47 +52,56 @@ namespace Encog.Examples.CSVMarketExample
                 string name = "";
                 switch (a)
                 {
-                    case 4: name = "BMW1440"; break;
-                    case 1: name = "DAI1440"; break;
-                    case 2: name = "EURUSD5"; break;
-                    case 3: name = "Gazprom1440"; break;
-                    case 0: name = "Lukoil1440"; break;
-                    case 5: name = "Sberbank1440"; break;
-                    case 6: name = "USDCHF5"; break;
-                    case 7: name = "USDJPY5"; break;
+                    case 0:
+                        name = "Lukoil1440";
+                        break;
+                    //case 1: name = "DAI1440"; break;
+                    //case 2: name = "EURUSD5"; break;
+                    //case 3: name = "Gazprom1440"; break;
+                    //case 4: name = "BMW1440"; break;
+                    //case 5: name = "Sberbank1440"; break;
+                    //case 6: name = "USDCHF5"; break;
+                    //case 7: name = "USDJPY5"; break;
                     //case 8: name = "USDJPY5_1"; break;
-                    case 9: name = "XAUUSD5"; break;
+                    //case 9: name = "XAUUSD5"; break;
                 }
-                if(string.IsNullOrEmpty(name)) continue;
+
+                if (string.IsNullOrEmpty(name)) continue;
 
                 var forexFile = $"D:\\1\\{name}.csv";
 
-                var resultFile = $"D:\\1\\_res_{name}.txt";
 
                 var dataDir = new FileInfo(AppDomain.CurrentDomain.BaseDirectory);
 
-                for (int i = 0; i < 5; i++)
+                //for (Config.DAYS_OFFSET = 0; Config.DAYS_OFFSET <= 300; Config.DAYS_OFFSET += 100)
+                Config.TEST_STRATCH = 80;
+                for (Config.TEST_OFFSET = 0; Config.TEST_OFFSET <= 200; Config.TEST_OFFSET += 50)
+                    //for (Config.TEST_STRATCH = 0; Config.TEST_STRATCH <= 160; Config.TEST_STRATCH += 40)
                 {
-                    Config.OFFSET = i;
-
-                    for (int j = 0; j < 5; j++)
+                    var resultFile = $"D:\\1\\_res_{name}_{Config.DAYS_OFFSET}_{Config.TEST_OFFSET}_{Config.TEST_STRATCH}.txt";
+                        for (int i = 0; i < 3; i++)
                     {
-                        var timeStart = DateTime.Now;
-                        Config.TRAINING_FILE = $"marketData({name}-{i}-{j}){DateTime.Now.Ticks}.egb";
-                        Config.NETWORK_FILE = $"marketNetwork({name}-{i}-{j}){DateTime.Now.Ticks}.eg";
+                        Config.OFFSET = i;
 
-                        //public static readonly String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
-                        //public static readonly String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
+                        for (int j = 0; j < 3; j++)
+                        {
+                            var timeStart = DateTime.Now;
+                            Config.TRAINING_FILE = $"marketData({name}-{i}-{j}){DateTime.Now.Ticks}.egb";
+                            Config.NETWORK_FILE = $"marketNetwork({name}-{i}-{j}){DateTime.Now.Ticks}.eg";
 
-                        MarketBuildTraining.Generate(forexFile);
-                        var err = MarketTrain.Train(dataDir);
-                        var best = MarketPrune.Incremental(dataDir);
-                        var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
+                            //public static readonly String TRAINING_FILE = $"marketData{DateTime.Now.Ticks}.egb";
+                            //public static readonly String NETWORK_FILE = $"marketNetwork{DateTime.Now.Ticks}.eg";
 
-                        var result =
-                            $"Offset = {i};\t trainErr = {err};\t best: {NetworkToString(best)};\t result = {gErr:0.00};\t timeTaken: {DateTime.Now - timeStart:g};\t startTime: {timeStart:g}";
+                            MarketBuildTraining.Generate(forexFile);
+                            var err = MarketTrain.Train(dataDir);
+                            var best = MarketPrune.Incremental(dataDir);
+                            var gErr = MarketEvaluate.Evaluate(dataDir, forexFile);
 
-                        File.AppendAllLines(resultFile, new[] {result});
+                            var result =
+                                $"Offset = {i};\t trainErr = {err};\t best: {NetworkToString(best)};\t result = {gErr:0.00};\t timeTaken: {DateTime.Now - timeStart:g};\t startTime: {timeStart:g}";
+
+                            File.AppendAllLines(resultFile, new[] {result});
+                        }
                     }
                 }
             }
